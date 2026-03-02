@@ -4,7 +4,7 @@
 
 import boto3
 from boto3.dynamodb.conditions import Key
-
+from boto3.dynamodb.conditions import After
 # -------------------------------------------------------
 # Configuration — update REGION if your table is elsewhere
 # -------------------------------------------------------
@@ -52,6 +52,7 @@ def print_all_movies():
         print_movie(movie)
 
 def get_movie_by_title():
+    table = get_table()
     user_title = input("Enter a movie title: ")
 
     response = table.scan(FilterExpression=Attr("title").eq(title))
