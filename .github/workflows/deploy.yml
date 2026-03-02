@@ -1,6 +1,7 @@
 # .github/workflows/deploy.yml
 # This workflow runs every time code is pushed to main.
 # It SSHes into the EC2 instance and runs git pull to deploy the latest code.
+# added
 
 name: Deploy to EC2
 
